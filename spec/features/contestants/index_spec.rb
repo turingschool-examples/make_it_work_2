@@ -26,9 +26,9 @@ RSpec.describe "As a visitor" do
       end
 
       within "#contestant-#{gretchen.id}" do
-        expect(page).to have_content(gretche .name)
+        expect(page).to have_content(gretchen .name)
         expect(page).to have_content(news_chic.name)
-        expect(page).to have_content(upholstrey_tux.name)
+        expect(page).to have_content(upholstery_tux.name)
       end
     end
   end
