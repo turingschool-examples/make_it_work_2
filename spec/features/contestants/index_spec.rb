@@ -28,7 +28,9 @@ RSpec.describe "As a visitor", type: :feature do
     visit "/contestants"
 
     expect(page).to have_content(gretchen.name)
-    expect(page).to have_content("Projects: News Chic, Upholstery Tuxedo")
+    expect(page).to have_content("Project:")
+    expect(page).to have_content("News Chic")
+    expect(page).to have_content("Upholstery Tuxedo")
 
 
   end
