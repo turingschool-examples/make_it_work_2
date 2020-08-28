@@ -278,8 +278,24 @@
           1,
           null
         ]
+      },
+      "/Users/jamesbelta/turing/2module/indy_challenges/make_it_work_2/app/controllers/projects_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesbelta/turing/2module/indy_challenges/make_it_work_2/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1598635528
+    "timestamp": 1598635688
   }
 }
