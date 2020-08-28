@@ -49,5 +49,20 @@ RSpec.describe 'contestants index page', type: :feature do
       expect(page).to have_content(@erin.name)
       expect(page).to have_content(@boardfit.name)
     end
+    # expect(page).to have_content(jay.name)
+    # expect(page).to have_content(gretchen.name)
+  end
+
+  it 'see a list of the projects (names) that they have been on' do
+
+    visit '/contestants'
+
+    @jay.projects.each do |project|
+      expect(page).to have_content(project.name)
+    end
+
+    @gretchen.projects.each do |project|
+      expect(page).to have_content(project.name)
+    end
   end
 end
