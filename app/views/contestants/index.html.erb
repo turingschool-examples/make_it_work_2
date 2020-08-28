@@ -1,0 +1,8 @@
+<h1>Contestants Index</h1>
+
+
+<h3><% @results.each do |name, projects| %>
+  <%= name %>
+  <p> Projects: <%= projects.join(", ") %></p>
+  <% end %>
+ </h3>
