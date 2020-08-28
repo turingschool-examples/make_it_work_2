@@ -1,3 +1,7 @@
 <h2><%= @project.name %></h2>
 Material:  <%= @project.material %><br>
 Challenge Theme:  <%= @challenge.theme %>
+
+<% @project.contestant_projects.each do |project| %>
+  <%= project.contestant.name %>
+<% end %>
