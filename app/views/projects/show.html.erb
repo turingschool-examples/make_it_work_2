@@ -7,3 +7,5 @@
       <li>Number of Participants: <%= @contestants_count %></li><br>
       <li>Average Years of Experience: <%= @average_experience %></li><br>
     </ul>
+
+    <h3><%= link_to "Add Contestant to Project", "/projects/#{@project.id}/add" %></h3>

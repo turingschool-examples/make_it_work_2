@@ -1,0 +1,9 @@
+<%= form_tag ('/projects/:id/add') do %>
+    <label>Contestant ID:</label><br>
+    <%= text_field_tag :contestant_id %><br>
+
+    <%= hidden_field_tag :project_id, "#{params[:id]}" %><br>
+
+
+    <%= submit_tag "Add Contestant to Project" %><br><br>
+  <% end %>

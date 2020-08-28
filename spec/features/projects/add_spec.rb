@@ -26,34 +26,21 @@ RSpec.describe Project do
 
   end
 
-  describe 'show page' do
-    it 'shows project attributes' do
-      visit "/projects/#{@upholstery_tux.id}"
-
-      expect(page).to have_content("#{@upholstery_tux.name}")
-      expect(page).to have_content("Name:")
-      expect(page).to have_content("Material:")
-      expect(page).to have_content("Theme:")
-
-    end
-
-    it 'shows count of contestants who worked on project' do
-      visit "/projects/#{@upholstery_tux.id}"
-
-      expect(page).to have_content("Number of Participants: 2")
-    end
-
-    it 'shows avg years of experience for all contestants' do
-      visit "/projects/#{@upholstery_tux.id}"
-
-      expect(page).to have_content("Average Years of Experience: 10")
-    end
-
+  describe 'add contestant page' do
     it 'shows link to add contestant' do
       visit "/projects/#{@upholstery_tux.id}"
 
       expect(page).to have_link("Add Contestant to Project")
       click_link "Add Contestant to Project"
+
+      expect(current_path).to eq("/projects/#{@upholstery_tux.id}/add")
+      expect(page).to have_content("Contestant ID:")
+
+      id = @jay.id
+      fill_in :contestant_id, with: "#{@jay.id}"
+
+      click_on "Add Contestant to Project"
+      expect(page).to have_content(3)
     end
   end
 end

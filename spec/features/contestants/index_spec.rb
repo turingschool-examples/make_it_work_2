@@ -2,11 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Contestant do
   before :each do
-    Project.delete_all
-    Challenge.delete_all
-    Contestant.delete_all
-    ContestantProject.delete_all
-
     @recycled_material_challenge = Challenge.create!(theme: "Recycled Material", project_budget: 1000)
     @furniture_challenge = Challenge.create!(theme: "Apartment Furnishings", project_budget: 1000)
 
