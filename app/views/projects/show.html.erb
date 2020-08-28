@@ -6,3 +6,10 @@
   <li>Number of Contestants: <%= @project.count_of_contestants %></li>
   <li>Average Contestant Experience: <%= (@project.avg_contestant_exp) %> years</li>
 </ul>
+
+<h4>Add contestant to project:</h4>
+<%= form_with url: "/projects/#{@project.id}/contestants", method: :patch do |form| %>
+  <%= form.label :contestant_id %>
+  <%= form.number_field :contestant_id, placeholder: 'Enter contestant id' %>
+  <%= form.submit "Add to Project", class: "button" %>
+<% end %>
