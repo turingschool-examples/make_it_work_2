@@ -1,4 +1,7 @@
 <h1><%= @project.name %></h1>
 
-<h3>Material: <%= @project.material %></h3>
-<h3>Challenge Theme: <%= @challenge.theme %></h3>
+<ul>
+  <li>Material: <%= @project.material %></li>
+  <li>Challenge Theme: <%= @challenge.theme %></li>
+  <li>Number of Contestants: <%= @project.contestants.count %></li>
+</ul>
