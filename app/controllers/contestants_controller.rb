@@ -4,4 +4,8 @@ class ContestantsController < ApplicationController
     @contestants = Contestant.all
   end
   
+  def create
+    binding.pry
+  end
+  
 end
