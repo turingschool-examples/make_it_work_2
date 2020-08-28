@@ -1,0 +1,10 @@
+
+<a href="/">Home</a>
+</br></br> || <a href="javascript:history.back()">Go Back</a> ||
+
+<h1><%= @project.name %></h1>
+<p>Material: <%= @project.material %></p>
+
+<p>Challenge Theme: <%=  @project.challenge.theme %></p>
+<p>Number of Contestants: <%= @project.contestants.count %></p>
+<p>Average Contestant exerience: <%= (@project.contestants.sum { |contestant|  contestant.years_of_experience}).to_f/@project.contestants.count %></p>

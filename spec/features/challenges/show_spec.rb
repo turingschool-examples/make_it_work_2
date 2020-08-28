@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe 'challenges show page', type: :feature do
   it 'can see the challenge with that id including attributes' do
     challenge_1 = Challenge.create(theme: "Apartment Furnishings",

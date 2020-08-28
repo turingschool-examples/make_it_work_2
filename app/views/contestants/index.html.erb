@@ -11,4 +11,7 @@
   <p>Age: <%= contestant.age %></p>
   <p>Hometown: <%= contestant.hometown %></p>
   <p>Years of Experience: <%= contestant.years_of_experience %></p>
+  <p>Projects: <%= contestant.projects.each do |project| %>
+    |<%= project[:name] %>|
+  <% end %></p>
 <% end %>

@@ -1,0 +1,13 @@
+
+<a href="/">Home</a>
+</br></br> || <a href="javascript:history.back()">Go Back</a> ||
+
+
+<h1>All Projects</h1>
+
+<%= link_to "New Project", '/projects/new' %>
+
+<% @projects.each do |project| %>
+  <h3><a href="/projects/<%= project.id %>"><%= project.name %></a></h3>
+  <p>Material: <%= project.material %></p>
+<% end %>
