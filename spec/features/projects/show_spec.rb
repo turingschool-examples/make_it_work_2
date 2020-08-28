@@ -14,7 +14,7 @@ RSpec.describe "Project Show Page" do
 
     expect(page).to have_content(@news_chic.name)
     expect(page).to have_content("Material: #{@news_chic.material}")
-    expect(page).to have_content("Challenge Theme: Recycled Material")
+    expect(page).to have_content("Challenge Theme: #{@news_chic.challenge.theme}")
   end
 
 end
