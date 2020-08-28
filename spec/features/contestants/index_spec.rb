@@ -12,8 +12,11 @@ require "rails_helper"
 
 RSpec.describe "Contestants Index Page", type: :feature do
   describe "As a visitor" do
-    it "can visit the contestants index page"
+    it "can visit the contestants index page" do
+      visit "/contestants"
+    end
+
     it "can see a list of names of all contestants"
-    it "can see contestant projects under their name"
+    it "can see contestants projects under their name"
   end
 end
