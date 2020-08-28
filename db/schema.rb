@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_154722) do
+ActiveRecord::Schema.define(version: 2020_08_28_155916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 2020_07_10_154722) do
     t.string "material"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "challenge_id"
-    t.index ["challenge_id"], name: "index_projects_on_challenge_id"
+    t.bigint "contestant_id"
+    t.index ["contestant_id"], name: "index_projects_on_contestant_id"
   end
 
   add_foreign_key "contestant_projects", "contestants"
   add_foreign_key "contestant_projects", "projects"
-  add_foreign_key "projects", "challenges"
+  add_foreign_key "projects", "contestants"
 end
