@@ -1,0 +1,17 @@
+<a href="/">Home</a>
+</br></br> || <a href="javascript:history.back()">Go Back</a> ||
+
+<h1>New Contestant</h1>
+
+<%= form_tag "/contestants" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <%= label_tag :age %>
+  <%= text_field_tag :age %>
+  <%= label_tag :hometown %>
+  <%= text_field_tag :hometown %>
+  <%= label_tag :years_of_experience %>
+  <%= text_field_tag :years_of_experience %>
+
+  <%= submit_tag 'Create Contestant' %>
+<% end %>
