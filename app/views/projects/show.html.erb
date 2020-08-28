@@ -6,3 +6,10 @@
   <li>Number of Contestants: <%= @project.contestants.count %></li>
   <li>Average Contestant Experience: <%= @project.contestants.average_years_experience %> years</li>
 </ul>
+
+<%= form_tag "/contestants_project/#{@project.id}" do %>
+      <%= label_tag 'Contestant ID:' %><br>
+      <%= text_field_tag :contestant_id %><br><br>
+
+      <%= submit_tag 'Add Contestant To Project' %>
+    <% end %>
