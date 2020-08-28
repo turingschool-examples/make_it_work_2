@@ -18,16 +18,25 @@ RSpec.describe "Projects Show Page", type: :feature do
       @kentaro = Contestant.create(name: "Kentaro Kameyama", age: 30, hometown: "Boston", years_of_experience: 8)
       @erin = Contestant.create(name: "Erin Robertson", age: 44, hometown: "Denver", years_of_experience: 15)
 
+      @amateur = Contestant.create(name: "A. M. Teur", age: 21, hometown: "San Diego", years_of_experience: 1)
+
       ContestantProject.create(contestant_id: @jay.id, project_id: @news_chic.id)
       ContestantProject.create(contestant_id: @gretchen.id, project_id: @news_chic.id)
-      ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
-      ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
+      # ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
+      # ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
       ContestantProject.create(contestant_id: @kentaro.id, project_id: @boardfit.id)
       ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
 
       ContestantProject.create(contestant_id: @jay.id, project_id: @lit_fit.id)
       ContestantProject.create(contestant_id: @gretchen.id, project_id: @lit_fit.id)
       ContestantProject.create(contestant_id: @erin.id, project_id: @lit_fit.id)
+
+      ContestantProject.create(contestant_id: @jay.id, project_id: @upholstery_tux.id)
+      ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
+      ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
+      ContestantProject.create(contestant_id: @erin.id, project_id: @upholstery_tux.id)
+
+      ContestantProject.create(contestant_id: @amateur.id, project_id: @paper_mache.id)
     end
 
     it "can visit the projects show page by unique id" do
@@ -59,16 +68,13 @@ RSpec.describe "Projects Show Page", type: :feature do
       expect(page).to have_content("Number of Contestants: 3")
     end
 
-    it "can see average years of experience for the contestants who worked on the project"
+    it "can see average years of experience for the contestants who worked on the project" do
+      visit "/projects/#{@upholstery_tux.id}"
+      expect(page).to have_content(@upholstery_tux.name)
+      expect(page).to have_content(@upholstery_tux.material)
+      expect(page).to have_content(@upholstery_tux.challenge.theme)
+      expect(page).to have_content("Number of Contestants: 4")
+      expect(page).to have_content("Average Contestant Experience: 12.0 years")
+    end
   end
 end
-
-# User Story Extension 1 - Average years of experience for contestants by project
-# As a visitor,
-# When I visit a project's show page
-# I see the average years of experience for the contestants that worked on that project
-# (e.g.    Litfit
-#     Material: Lamp Shade
-#   Challenge Theme: Apartment Furnishings
-#   Number of Contestants: 3
-#   Average Contestant Experience: 10.25 years)
