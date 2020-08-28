@@ -10,6 +10,6 @@
 <h4>Add contestant to project:</h4>
 <%= form_with url: "/projects/#{@project.id}/contestants", method: :patch do |form| %>
   <%= form.label :contestant_id %>
-  <%= form.number_field :contestant_id, placeholder: 'Enter contestant id' %>
+  <%= form.collection_select :contestant_id, Contestant.all, :id, :name, prompt: true %>
   <%= form.submit "Add to Project", class: "button" %>
 <% end %>
