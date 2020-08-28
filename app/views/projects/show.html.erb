@@ -1,5 +1,6 @@
 <h1>Welcome to our show page</h1>
 
-<%= "Challenge theme: #{@project.challenge.theme}" %><br><br>
 <%= "Name: #{@project.name}" %><br><br>
-<%= "Material: #{@project.material}" %>
+<%= "Material: #{@project.material}" %><br><br>
+<%= "Challenge theme: #{@project.challenge.theme}" %><br><br>
+<%= "Number of Contestants: #{@project.contestants.count}" %>
