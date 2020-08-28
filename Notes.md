@@ -37,16 +37,16 @@ When I visit the contestants index page ("/contestants")
           Jay McCarroll
           Projects: LeatherFeather)
 
-
-          within("#pet-#{@pet_2.id}") do
-        expect(page).to have_link("Remove Favorite")
-        end
-
-<div id= <%= "pet-#{pet.id}" %>>
+<!-- capybara -->
+  <!-- within("#pet-#{@pet_2.id}") do
+    expect(page).to have_link("Remove Favorite")
+  end -->
+<!-- html -->
+<!-- <div id= <%= "pet-#{pet.id}" %>> </div> -->
 
 ### User Story 3 of 3
 - [] Done
-- [] Set up tests
+- [x] Set up tests
 
 As a visitor,
 When I visit a project's show page

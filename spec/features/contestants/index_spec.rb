@@ -35,7 +35,7 @@ RSpec.describe "As visitor in contestants index page can see list of names and l
 
   it "Can see a list of contestant's projects names under contestant's name" do
     visit "/contestants"
-save_and_open_page
+# save_and_open_page
 
     within("#contestant-#{@jay.id}") do
       expect(page).to have_content(@jay.name)
