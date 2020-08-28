@@ -11,11 +11,11 @@ require 'rails_helper'
 
 RSpec.describe "projects show page" do
   before :each do
-    @apartment_furnishings = Challenge.create!(theme: "Apartment Furnishings",
-    project_budget: "$100")
-    @litfit = @apartment_furnishings.projects.create!(name: "Litfit",
+    @furniture_challenge = Challenge.create!(theme: "Apartment Furnishings",
+    project_budget: 1000)
+    @litfit = @furniture_challenge.projects.create!(name: "Litfit",
                                                       material: "Lamp Shade")
-    @rug_tuxedo = @apartment_furnishings.projects.create!(name: "Rug Tuxedo",
+    @rug_tuxedo = @furniture_challenge.projects.create!(name: "Rug Tuxedo",
                                                           material: "Silk")
   end
 
@@ -26,7 +26,7 @@ RSpec.describe "projects show page" do
     expect(page).to have_content("Project Name: #{@litfit.name}")
     expect(page).to have_content("Project Material: #{@litfit.material}")
 
-    expect(page).to have_content("Challenge Theme: #{@apartment_furnishings.theme}")
+    expect(page).to have_content("Challenge Theme: #{@furniture_challenge.theme}")
 
     expect(page).to_not have_content(@rug_tuxedo.name)
   end
