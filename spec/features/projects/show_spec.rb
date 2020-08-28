@@ -52,4 +52,15 @@ RSpec.describe "As a visitor", type: :feature do
       visit "/projects/#{@boardfit.id}"
       expect(page).to have_content("Average Contestant Experience: 11.5 years")
     end
+
+    it "When I visit a project's show page I see a form to add a contestant to this project" do
+
+      visit "/projects/#{@news_chic.id}"
+
+      fill_in :id, with: "3"
+      click_button "Add Contestant to Project"
+
+      expect(page).to have_current_path "/projects/#{@news_chic.id}"
+      expect(page).to have_content("Number of Contestants: 3")
+    end
 end
