@@ -14,8 +14,6 @@ class ContestantsController < ApplicationController
 
   end
 
-
-
   private
   def contestant_params
     params.permit(:name)
