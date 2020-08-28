@@ -31,7 +31,7 @@ RSpec.describe Project do
 
   end
 
-  describe 'Projects show page' do
+  describe 'show page' do
     it 'shows project attributes' do
       visit "/projects/#{@upholstery_tux.id}"
 
@@ -42,11 +42,11 @@ RSpec.describe Project do
 
     end
 
-    # it 'shows count of contestants who worked on project' do
-    #   visit "/projects/#{upholstery_tux.id}"
-    #
-    #   expect(page).to have_content("How many contestants participated in this challenge: 12.0")
-    # end
+    it 'shows count of contestants who worked on project' do
+      visit "/projects/#{@upholstery_tux.id}"
+
+      expect(page).to have_content("Number of Participants: 2")
+    end
 
     # it 'shows avg years of experience for all contestants' do
     #   visit "/projects/#{upholstery_tux.id}"
