@@ -20,6 +20,7 @@ RSpec.describe "When I visit a project's show page" do
     expect(page).to have_content(lit_fit.material)
     expect(page).to have_content(furniture_challenge.theme)
     expect(page).to have_content(lit_fit.contestants.count)
+    expect(page).to have_content(lit_fit.contestants.average(:years_of_experience))
     save_and_open_page
   end
 end
