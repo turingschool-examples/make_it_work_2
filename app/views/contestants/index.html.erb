@@ -3,8 +3,6 @@
 <% @contestants.each do |contestant| %>
 <section id='contestants-<%=contestant.id%>'>
   <h3><%= contestant.name %></h3>
-  <% contestant.projects.each do |project| %>
-  <%= project.name %><br>
-  <% end %>
+  <p><%= contestant.projects.pluck(:name).join(', ') %></p>
 </section>
 <% end%>
