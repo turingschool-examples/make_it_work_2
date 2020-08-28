@@ -251,12 +251,9 @@
           null
         ]
       },
-      "/Users/jamesbelta/turing/2module/indy_challenges/make_it_work_2/app/models/project.rb": {
+      "/Users/jamesbelta/turing/2module/indy_challenges/make_it_work_2/app/models/challenge.rb": {
         "lines": [
           1,
-          1,
-          1,
-          null,
           1,
           1,
           null
@@ -269,24 +266,9 @@
           null
         ]
       },
-      "/Users/jamesbelta/turing/2module/indy_challenges/make_it_work_2/app/models/challenge.rb": {
+      "/Users/jamesbelta/turing/2module/indy_challenges/make_it_work_2/app/models/project.rb": {
         "lines": [
           1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jamesbelta/turing/2module/indy_challenges/make_it_work_2/app/models/contestant_project.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jamesbelta/turing/2module/indy_challenges/make_it_work_2/app/models/contestant.rb": {
-        "lines": [
           1,
           1,
           null,
@@ -296,6 +278,6 @@
         ]
       }
     },
-    "timestamp": 1598633714
+    "timestamp": 1598635397
   }
 }
