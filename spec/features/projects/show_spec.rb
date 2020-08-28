@@ -58,5 +58,17 @@ RSpec.describe "Projects Show Page", type: :feature do
       expect(page).to have_content(@lit_fit.challenge.theme)
       expect(page).to have_content("Number of Contestants: 3")
     end
+
+    it "can see average years of experience for the contestants who worked on the project"
   end
 end
+
+# User Story Extension 1 - Average years of experience for contestants by project
+# As a visitor,
+# When I visit a project's show page
+# I see the average years of experience for the contestants that worked on that project
+# (e.g.    Litfit
+#     Material: Lamp Shade
+#   Challenge Theme: Apartment Furnishings
+#   Number of Contestants: 3
+#   Average Contestant Experience: 10.25 years)
