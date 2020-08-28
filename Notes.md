@@ -25,17 +25,24 @@ When I visit a project's show page ("/projects/:id"),
     Challenge Theme: Apartment Furnishings)
 
 ### User Story 2 of 3
-- [] Done
-- [] Set up tests
+- [x] Done
+- [x] Set up tests
 
 As a visitor,
 When I visit the contestants index page ("/contestants")
-  - [] I see a list of names of all the contestants
-  - [] And under each contestants name I see a list of the projects (names) that they've been on
+  - [x] I see a list of names of all the contestants
+  - [x] And under each contestants name I see a list of the projects (names) that they've been on
   (e.g.   Kentaro Kameyama
           Projects: Litfit, Rug Tuxedo
           Jay McCarroll
           Projects: LeatherFeather)
+
+
+          within("#pet-#{@pet_2.id}") do
+        expect(page).to have_link("Remove Favorite")
+        end
+
+<div id= <%= "pet-#{pet.id}" %>>
 
 ### User Story 3 of 3
 - [] Done
