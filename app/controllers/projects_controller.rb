@@ -5,16 +5,21 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project_id = params[:project_id]
+
   end
 
   def create
     challenge = Challenge.find(params[:challenge_id])
-    project = challenge.projects.create!({name: "name", material: "material"})
+    project = challenge.project.create({name: "name", material: "material"})
+    redirect_to("/shelters/#{shelter.id}/pets")
   end
 
   def show
-    @projects = Project.all
+    @project = Project.find(params[:id])
+  end
+
+  def update
+
   end
 
 end
