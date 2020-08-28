@@ -28,7 +28,7 @@ RSpec.describe "As a visitor", type: :feature do
 
     visit "/projects/#{lit_fit.id}"
 
-    expect(page).to have_content("Litfit")
+    expect(page).to have_content("Name: Litfit")
     expect(page).to have_content("Material: Lamp")
     expect(page).to have_content("Challenge Theme: Apartment Furnishings")
 
