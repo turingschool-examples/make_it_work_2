@@ -15,7 +15,7 @@
 
 ### User Story 1 of 3
 - [x] Done
-
+- [x] Set up tests
 As a visitor,
 When I visit a project's show page ("/projects/:id"),
   - [x] I see that project's name and material
@@ -26,6 +26,7 @@ When I visit a project's show page ("/projects/:id"),
 
 ### User Story 2 of 3
 - [] Done
+- [] Set up tests
 
 As a visitor,
 When I visit the contestants index page ("/contestants")
@@ -38,6 +39,7 @@ When I visit the contestants index page ("/contestants")
 
 ### User Story 3 of 3
 - [] Done
+- [] Set up tests
 
 As a visitor,
 When I visit a project's show page
