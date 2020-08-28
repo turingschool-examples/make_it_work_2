@@ -18,12 +18,16 @@ RSpec.describe "Projects Show Page", type: :feature do
       @kentaro = Contestant.create(name: "Kentaro Kameyama", age: 30, hometown: "Boston", years_of_experience: 8)
       @erin = Contestant.create(name: "Erin Robertson", age: 44, hometown: "Denver", years_of_experience: 15)
 
-      @cont_proj_1 = ContestantProject.create(contestant_id: @jay.id, project_id: @news_chic.id)
-      @cont_proj_2 = ContestantProject.create(contestant_id: @gretchen.id, project_id: @news_chic.id)
-      @cont_proj_3 = ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
-      @cont_proj_4 = ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
-      @cont_proj_5 = ContestantProject.create(contestant_id: @kentaro.id, project_id: @boardfit.id)
-      @cont_proj_6 = ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
+      ContestantProject.create(contestant_id: @jay.id, project_id: @news_chic.id)
+      ContestantProject.create(contestant_id: @gretchen.id, project_id: @news_chic.id)
+      ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
+      ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
+      ContestantProject.create(contestant_id: @kentaro.id, project_id: @boardfit.id)
+      ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
+
+      ContestantProject.create(contestant_id: @jay.id, project_id: @lit_fit.id)
+      ContestantProject.create(contestant_id: @gretchen.id, project_id: @lit_fit.id)
+      ContestantProject.create(contestant_id: @erin.id, project_id: @lit_fit.id)
     end
 
     it "can visit the projects show page by unique id" do
@@ -44,10 +48,17 @@ RSpec.describe "Projects Show Page", type: :feature do
 
     it "can see the theme of the challenge for project" do
       visit "/projects/#{@news_chic.id}"
+      save_and_open_page
       expect(page).to have_content(@news_chic.challenge.theme)
     end
 
-    it "can see a count of contestants on the project"
+    it "can see a count of contestants on the project" do
+      visit "/projects/#{@lit_fit.id}"
+      expect(page).to have_content(@lit_fit.name)
+      expect(page).to have_content(@lit_fit.material)
+      expect(page).to have_content(@lit_fit.challenge.theme)
+      expect(page).to have_content("Number of Contestants: 3")
+    end
   end
 end
 
