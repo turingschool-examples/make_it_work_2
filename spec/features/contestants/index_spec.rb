@@ -35,18 +35,29 @@ RSpec.describe "As visitor in contestants index page can see list of names and l
 
   it "Can see a list of contestant's projects names under contestant's name" do
     visit "/contestants"
+save_and_open_page
 
-    expect(page).to have_content(@jay.name)
-    expect(page).to have_content("Projects: #{@news_chic.name}")
+    within("#contestant-#{@jay.id}") do
+      expect(page).to have_content(@jay.name)
+      expect(page).to have_content("#{@news_chic.name}")
+    end
 
-    expect(page).to have_content(@gretchen.name)
-    expect(page).to have_content("Projects: #{@news_chic.name}, #{@upholstery_tux.name}")
+    within("#contestant-#{@gretchen.id}") do
+      expect(page).to have_content(@gretchen.name)
+      expect(page).to have_content("#{@news_chic.name}")     
+      expect(page).to have_content("#{@upholstery_tux.name}")     
+    end
 
-    expect(page).to have_content(@kentaro.name)
-    expect(page).to have_content("Projects: #{@upholstery_tux.name}, #{@boardfit.name}")
+    within("#contestant-#{@kentaro.id}") do
+      expect(page).to have_content(@kentaro.name)
+      expect(page).to have_content("#{@upholstery_tux.name}")
+      expect(page).to have_content("#{@boardfit.name}")
+    end
 
-    expect(page).to have_content(@erin.name)
-    expect(page).to have_content("Projects: #{@boardfit.name}")
+    within("#contestant-#{@erin.id}") do
+      expect(page).to have_content(@erin.name)
+      expect(page).to have_content("#{@boardfit.name}")
+    end
   end
 
 end
