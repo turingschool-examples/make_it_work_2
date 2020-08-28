@@ -34,5 +34,9 @@ RSpec.describe "Projects Show Page", type: :feature do
       expect(page).to have_content(@recycled_material_challenge.theme)
     end
 
+    it "shows number of contestants" do
+      expect(page).to have_content("Total Number of Contestants: 2")
+    end
+
   end
 end

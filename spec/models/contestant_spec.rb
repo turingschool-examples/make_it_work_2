@@ -9,7 +9,7 @@ RSpec.describe Contestant, type: :model do
     it {should validate_presence_of :years_of_experience}
   end
 
-  xdescribe "relationships" do
+  describe "relationships" do
     it {should have_many :contestant_projects}
     it {should have_many(:projects).through(:contestant_projects)}
   end
