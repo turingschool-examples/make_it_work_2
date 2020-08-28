@@ -5,3 +5,7 @@
 <% if @project.contestants.count > 0 %>
 <h3>Average Contestant Experience: <%= @project.contestants.sum {|contestant| contestant.years_of_experience} / @project.contestants.count %> years</h3>
 <% end %>
+<%= form_tag :action => 'update' %>
+<%= text_field "contestant", "id", "size" => 20 %>
+<%= submit_tag( "Add Contestant" ) %>
+</form>
