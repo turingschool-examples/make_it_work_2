@@ -18,12 +18,9 @@ RSpec.describe "Projects Show Page", type: :feature do
       @kentaro = Contestant.create(name: "Kentaro Kameyama", age: 30, hometown: "Boston", years_of_experience: 8)
       @erin = Contestant.create(name: "Erin Robertson", age: 44, hometown: "Denver", years_of_experience: 15)
 
-      @amateur = Contestant.create(name: "A. M. Teur", age: 21, hometown: "San Diego", years_of_experience: 1)
-
       ContestantProject.create(contestant_id: @jay.id, project_id: @news_chic.id)
       ContestantProject.create(contestant_id: @gretchen.id, project_id: @news_chic.id)
-      # ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
-      # ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
+
       ContestantProject.create(contestant_id: @kentaro.id, project_id: @boardfit.id)
       ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
 
@@ -36,7 +33,7 @@ RSpec.describe "Projects Show Page", type: :feature do
       ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
       ContestantProject.create(contestant_id: @erin.id, project_id: @upholstery_tux.id)
 
-      ContestantProject.create(contestant_id: @amateur.id, project_id: @paper_mache.id)
+      ContestantProject.create(contestant_id: @erin.id, project_id: @paper_mache.id)
     end
 
     it "can visit the projects show page by unique id" do
@@ -77,10 +74,25 @@ RSpec.describe "Projects Show Page", type: :feature do
       expect(page).to have_content("Average Contestant Experience: 12.0 years")
     end
 
-    it "can see a form on the page to add a contestant"
-    it "can fill our the add contestant form"
-    it "can click on 'Add Contestant To Project' button and return to show page with contestant count"
-    it "can see updates to contestant index with NEW PROJECT"
+    it "can see add contests form, fill in, and update" do
+      visit "/projects/#{@paper_mache.id}"
+      expect(page).to have_content(@paper_mache.name)
+      expect(page).to have_content("Number of Contestants: 1")
+
+      fill_in :name, with: "Maria Bowers"
+      fill_in :age, with: "37"
+      fill_in :hometown, with: "San Antonio"
+      fill_in :years_of_experience, with: 7
+
+      click_button "Add Contestant To Project"
+      expect(current_path).to eq("/projects/#{@upholstery_tux.id}")
+      expect(page).to have_content("Number of Contestants: 2")
+
+      new_contestant = Contestant.last
+      visit "/contestants"
+      expect(page).to have_content(new_contestant.name)
+      expect(new_contestant.projects).to eq("Upholstery Tuxedo")
+    end
   end
 end
 
