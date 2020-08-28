@@ -1,7 +1,9 @@
 <h1>Project</h1>
 
-<%= @project.name %>
-<%= @project.material %>
-<%= @project.challenge.theme %>
-<br>
-<%= @project.contestants.count %>
+<h3>Name: <%= @project.name %></h3>
+
+<h3>Material: <%= @project.material %></h3>
+
+<h3>Theme: <%= @project.challenge.theme %></h3>
+
+<h3>Number of Contestants: <%= @project.contestants.count %></h3>
