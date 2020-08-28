@@ -45,4 +45,14 @@ end
         expect(page).to have_content("#{@news_chic.contestants.count}")
     end
   end
+
+  describe "As a visitor when I visit a project's show page ('/projects/:id')," do
+    it "I see the average years of experience for the contestants that worked on that project" do
+        visit "/projects/:id"
+
+        @average_age = @news_chic.contestants.map{ |person| person.years_of_experience}.sum.to_f/(@news_chic.contestants.count.to_f)
+
+        expect(page).to have_content("#{@average_age}")
+    end
+  end
 end

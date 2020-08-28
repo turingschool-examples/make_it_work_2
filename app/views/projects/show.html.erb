@@ -3,5 +3,5 @@
   <h2> Material: <%= project.material %></h2>
   <h2> Challenge Theme: <%= project.challenge.theme %></h2>
   <h3> Number of contestants: <%= project.contestants.count %></h3>
-
+  <h4> Average years of experience of contestants: <%= (project.contestants.map{ |person| person.years_of_experience}.sum.to_f)/(project.contestants.count.to_f) %></h4>
   <% end %>
