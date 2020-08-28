@@ -43,7 +43,7 @@ RSpec.describe 'project show page' do
     expect(page).to have_content("Average Contestant Experience: 12.5 years")
   end
 
-  it 'has form to add contestant to project' do
+  xit 'has form to add contestant to project' do
     visit "/projects/#{@upholstery_tux.id}"
 
     expect(page).to have_content("Contestant id:")
