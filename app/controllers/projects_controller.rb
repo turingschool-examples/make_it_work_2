@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @contestant = Contestant.find(params[:contestant_id])
     @project.contestants << @contestant
+    flash[:notice] = "#{@contestant.name} has been added to #{@project.name}"
     redirect_to "/projects/#{@project.id}"
   end
 end

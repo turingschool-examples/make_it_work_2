@@ -41,6 +41,7 @@ RSpec.describe 'as a visitor, when I visit the project show page', type: :featur
     click_button("Add to Project")
 
     expect(page).to have_current_path("/projects/#{@project.id}")
+    expect(page).to have_content("#{@contestant_3.name} has been added to #{@project.name}")
     expect(page).to have_content("Number of Contestants: 3")
     expect(page).to have_content("Average Contestant Experience: 11.0 years")
   end
