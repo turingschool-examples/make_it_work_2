@@ -1,33 +1,18 @@
-# User Story 2, Shelter Index
-#
-# As a visitor
-# When I visit '/shelters'
-# Then I see the name of each shelter in the system
-
 require 'rails_helper'
 
-RSpec.describe 'shelters index page', type: :feature do
-  it 'can see all shelters' do
-    shelter_1 = Shelter.create(name: "The Dragon's Dream",
-                               address: '1554 Diamond Lane',
-                               city: 'Destin',
-                               state: 'FL',
-                               zip: '32540')
-    shelter_2 = Shelter.create(name: 'Bougie Beasts',
-                               address: '2244 Ruby Ave',
-                               city: 'Cedar Rapids',
-                               state: 'IA',
-                               zip: '52227')
-    shelter_3 = Shelter.create(name: "Aurora's Animals",
-                               address: '1836 Emerald St.',
-                               city: 'Phoenix',
-                               state: 'AZ',
-                               zip: '85005')
+RSpec.describe 'challenges index page', type: :feature do
+  it 'can see all challenges' do
+    challenge_1 = Challenge.create(theme: "Apartment Furnishings",
+                               project_budget: '$1554')
+    challenge_2 = Challenge.create(theme: "Hugs for Bugs",
+                               project_budget: '$3457')
+    challenge_3 = Challenge.create(theme: "High as the Sky",
+                               project_budget: '$1346')
 
-    visit '/shelters'
+    visit '/challenges'
 
-    expect(page).to have_text(shelter_1.name)
-    expect(page).to have_text(shelter_2.name)
-    expect(page).to have_text(shelter_3.name)
+    expect(page).to have_text(challenge_1.name)
+    expect(page).to have_text(challenge_2.name)
+    expect(page).to have_text(challenge_3.name)
   end
 end

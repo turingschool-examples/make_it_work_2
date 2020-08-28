@@ -1,33 +1,24 @@
-# User Story 2, Shelter Index
-#
-# As a visitor
-# When I visit '/shelters'
-# Then I see the name of each shelter in the system
-
 require 'rails_helper'
 
-RSpec.describe 'shelters index page', type: :feature do
-  it 'can see all shelters' do
-    shelter_1 = Shelter.create(name: "The Dragon's Dream",
-                               address: '1554 Diamond Lane',
-                               city: 'Destin',
-                               state: 'FL',
-                               zip: '32540')
-    shelter_2 = Shelter.create(name: 'Bougie Beasts',
-                               address: '2244 Ruby Ave',
-                               city: 'Cedar Rapids',
-                               state: 'IA',
-                               zip: '52227')
-    shelter_3 = Shelter.create(name: "Aurora's Animals",
-                               address: '1836 Emerald St.',
-                               city: 'Phoenix',
-                               state: 'AZ',
-                               zip: '85005')
+RSpec.describe 'contestants index page', type: :feature do
+  it 'can see all contestants' do
+    contestant_1 = Contestant.create(name: "Kentaro Kamyama",
+                               age: '24',
+                               hometown: 'Destin, FL',
+                               years_of_experience: '14')
+    contestant_2 = Contestant.create(name: "Sallie Promate",
+                               age: '44',
+                               hometown: 'Denver, CO',
+                               years_of_experience: '4')
+    contestant_3 = Contestant.create(name: "Chinazu Gates",
+                               age: '31',
+                               hometown: 'Not Revealed',
+                               years_of_experience: '6')
 
-    visit '/shelters'
+    visit '/contestants'
 
-    expect(page).to have_text(shelter_1.name)
-    expect(page).to have_text(shelter_2.name)
-    expect(page).to have_text(shelter_3.name)
+    expect(page).to have_text(contestant_1.name)
+    expect(page).to have_text(contestant_2.name)
+    expect(page).to have_text(contestant_3.name)
   end
 end

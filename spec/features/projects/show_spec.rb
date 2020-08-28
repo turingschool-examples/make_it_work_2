@@ -1,7 +1,7 @@
 RSpec.describe 'projects show page', type: :feature do
   it 'can see the project with that id including attributes' do
     project_1 = Project.create(name: "Litfit",
-                               material: '1554 Diamond Lane')
+                               material: 'Lamps')
 
     visit "/projects/#{project_1.id}"
 
