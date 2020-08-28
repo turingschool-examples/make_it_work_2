@@ -48,7 +48,6 @@ RSpec.describe "Projects Show Page", type: :feature do
 
     it "can see the theme of the challenge for project" do
       visit "/projects/#{@news_chic.id}"
-      save_and_open_page
       expect(page).to have_content(@news_chic.challenge.theme)
     end
 
@@ -61,11 +60,3 @@ RSpec.describe "Projects Show Page", type: :feature do
     end
   end
 end
-
-# As a visitor,
-# When I visit a project's show page
-# I see a count of the number of contestants on this project
-# (e.g.    Litfit
-#     Material: Lamp Shade
-#   Challenge Theme: Apartment Furnishings
-#   Number of Contestants: 3 )
