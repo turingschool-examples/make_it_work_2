@@ -2,11 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Project do
   before :each do
-    Project.delete_all
-    Challenge.delete_all
-    Contestant.delete_all
-    ContestantProject.delete_all
-
     @recycled_material_challenge = Challenge.create!(theme: "Recycled Material", project_budget: 1000)
     @furniture_challenge = Challenge.create!(theme: "Apartment Furnishings", project_budget: 1000)
 
@@ -48,10 +43,10 @@ RSpec.describe Project do
       expect(page).to have_content("Number of Participants: 2")
     end
 
-    # it 'shows avg years of experience for all contestants' do
-    #   visit "/projects/#{upholstery_tux.id}"
-    #
-    #   expect(page).to have_content("Average Years of Experience: 12.0")
-    # end
+    it 'shows avg years of experience for all contestants' do
+      visit "/projects/#{@upholstery_tux.id}"
+
+      expect(page).to have_content("Average Years of Experience: 12")
+    end
   end
 end
