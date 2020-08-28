@@ -19,6 +19,7 @@ RSpec.describe 'show project by id page', type: :feature do
 
     expect(page).to have_content(@news_chic.name)
     expect(page).to have_content(@news_chic.material)
+    # expect(page).to have_content(@news_chic.recycled_material_challenge.theme)
   end
 
 end
