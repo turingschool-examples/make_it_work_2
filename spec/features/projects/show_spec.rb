@@ -20,14 +20,20 @@ RSpec.describe "Projects Show Page", type: :feature do
 
       ContestantProject.create(contestant_id: @jay.id, project_id: @news_chic.id)
       ContestantProject.create(contestant_id: @gretchen.id, project_id: @news_chic.id)
-      ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
-      ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
+
       ContestantProject.create(contestant_id: @kentaro.id, project_id: @boardfit.id)
       ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
 
       ContestantProject.create(contestant_id: @jay.id, project_id: @lit_fit.id)
       ContestantProject.create(contestant_id: @gretchen.id, project_id: @lit_fit.id)
       ContestantProject.create(contestant_id: @erin.id, project_id: @lit_fit.id)
+
+      ContestantProject.create(contestant_id: @jay.id, project_id: @upholstery_tux.id)
+      ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
+      ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
+      ContestantProject.create(contestant_id: @erin.id, project_id: @upholstery_tux.id)
+
+      ContestantProject.create(contestant_id: @erin.id, project_id: @paper_mache.id)
     end
 
     it "can visit the projects show page by unique id" do
@@ -57,6 +63,34 @@ RSpec.describe "Projects Show Page", type: :feature do
       expect(page).to have_content(@lit_fit.material)
       expect(page).to have_content(@lit_fit.challenge.theme)
       expect(page).to have_content("Number of Contestants: 3")
+    end
+
+    it "can see average years of experience for the contestants who worked on the project" do
+      visit "/projects/#{@upholstery_tux.id}"
+      expect(page).to have_content(@upholstery_tux.name)
+      expect(page).to have_content(@upholstery_tux.material)
+      expect(page).to have_content(@upholstery_tux.challenge.theme)
+      expect(page).to have_content("Number of Contestants: 4")
+      expect(page).to have_content("Average Contestant Experience: 12.0 years")
+    end
+
+    it "can see add contests form, fill in, and update" do
+      visit "/projects/#{@paper_mache.id}"
+      expect(page).to have_content(@paper_mache.name)
+      expect(page).to have_content("Number of Contestants: 1")
+
+      fill_in :name, with: @jay.name
+      fill_in :age, with: @jay.age
+      fill_in :hometown, with: @jay.hometown
+      fill_in :years_of_experience, with: @jay.years_of_experience
+
+      click_button "Add Contestant To Project"
+      expect(current_path).to eq("/projects/#{@paper_mache.id}")
+      expect(page).to have_content(@paper_mache.name)
+      expect(page).to have_content("Number of Contestants: 2")
+
+      visit "/contestants"
+      save_and_open_page
     end
   end
 end

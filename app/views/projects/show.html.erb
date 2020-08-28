@@ -10,3 +10,22 @@
 </b>
 <p>Number of Contestants: <%= @contestants.count %></p>
 </b>
+<p>Average Contestant Experience: <%= @average %> years</p>
+</b>
+</b>
+</b>
+</b>
+</b>
+</b>
+<p><strong>Add a new contestant to project: <%= @project.name %>:</strong></p>
+<%= form_tag("/projects/#{@project.id}", method: :post) do %>
+  <%= label_tag "Name: " %>
+  <%= text_field_tag :name %>
+  <%= label_tag "Age: " %>
+  <%= text_field_tag :age %>
+  <%= label_tag "Hometown: " %>
+  <%= text_field_tag :hometown %>
+  <%= label_tag "Years of Experience: " %>
+  <%= text_field_tag :years_of_experience %>
+  <%= submit_tag 'Add Contestant To Project', class: :button %>
+<% end %>
