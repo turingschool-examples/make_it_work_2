@@ -32,7 +32,7 @@ RSpec.describe "As a visitor" do
         expect(page).to have_content(gretche .name)
         expect(page).to have_content(news_chic.name)
         expect(page).to have_content(upholstrey_tux.name)
-
+      end
     end
   end
 end
