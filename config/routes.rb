@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get '/', to: 'welcome#index'
   get '/challenges', to: 'challenges#index'
+  get '/challenges/:id', to: 'challenges#show'
   get '/contestants', to: 'contestants#index'
+  get '/contestants/:id', to: 'contestants#show'
   get '/projects', to: 'projects#index'
+  get '/projects/:id', to: 'projects#show'
 end
