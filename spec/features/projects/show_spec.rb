@@ -9,7 +9,6 @@ RSpec.describe "projects show page", type: :feature do
     boardfit = recycled_material_challenge.projects.create(name: "Boardfit", material: "Cardboard Boxes")
 
     visit "/projects/#{news_chic.id}"
-    save_and_open_page
     expect(page).to have_content("#{news_chic.name}")
     expect(page).to have_content("#{news_chic.material}")
     expect(page).to have_content("#{news_chic.challenge.theme}")
