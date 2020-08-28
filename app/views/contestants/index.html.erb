@@ -3,4 +3,9 @@
 <% @contestants.each do |contestant| %>
   <article id="contestant-<%= contestant.id %>" class='contestant card'>
     <%= "#{contestant.name}" %>
+    <% contestant.contestant_projects.each do |contestant| %>
+      <%= contestant.project.name %>
+    <% end %>
+  </article>
 <% end %>
+</section>
