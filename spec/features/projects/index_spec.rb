@@ -11,7 +11,7 @@ RSpec.describe "visit projects index" do
 
       visit "/projects"
 
-      within "#challange-#{project.id}"
+      within "#challange-#{@pro_1.id}"
         expect(page).to have_content(@pro_1.name)
     end
     it "you can select the link to project page" do
