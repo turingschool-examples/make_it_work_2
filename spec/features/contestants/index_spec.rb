@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "project show page", type: :feature do
+RSpec.describe "contestants index page", type: :feature do
 
-  it "can see projects name and material" do
+  it "can see list of all contestants names" do
     recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
     furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
 
@@ -18,11 +18,9 @@ RSpec.describe "project show page", type: :feature do
 
     ContestantProject.create(contestant_id: jay.id, project_id: news_chic.id)
 
-    visit "/projects/#{news_chic.id}"
-    expect(page).to have_content("Project Name: News Chic")
-    expect(page).to have_content("Project Material: Newspaper")
-    
-
+    visit "/contestants"
+    expect(page).to have_content("Jay McCarroll")
+    expect(page).to have_content("Project: News Chic")
 
   end
 end
