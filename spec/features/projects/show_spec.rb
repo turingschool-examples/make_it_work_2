@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "As a visitor", type: :feature do
 
   before(:each) do
-    @challenge_1 = Challenge.create(theme: "Happy theme", project_budget: 100)
+    @challenge_1 = Challenge.create!(theme: "Happy theme", project_budget: 100)
     @project_1 = @challenge_1.projects.create!(name: "Project 1", material: "Aluminum")
   end
 
