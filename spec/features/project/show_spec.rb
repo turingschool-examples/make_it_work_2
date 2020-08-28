@@ -8,7 +8,7 @@ require 'rails_helper'
 #     Material: Lamp Shade
 #   Challenge Theme: Apartment Furnishings)
 RSpec.describe 'As a visitor' do
-  describe 'When I visit a project show page'
+  describe 'When I visit a project show page' do
     it "I see that project's name and material and theme of the challenge it belongs to" do
 
       recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
@@ -19,5 +19,6 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content(news_chic.name)
       expect(page).to have_content(news_chic.material)
       expect(page).to have_content("Recycled Material")
+    end
   end
 end
