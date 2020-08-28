@@ -21,7 +21,8 @@ RSpec.describe "project show page", type: :feature do
     visit "/projects/#{news_chic.id}"
     expect(page).to have_content("Project Name: News Chic")
     expect(page).to have_content("Project Material: Newspaper")
-    
+    expect(page).to have_content("Project Theme: Recycled Material")
+
 
 
   end
