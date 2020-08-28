@@ -27,4 +27,14 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Challenge Theme: #{@challenge_1.theme}")
     expect(page).to have_content("Number of Contestants: 3")
   end
+  
+  it "When I visit /projects/:id, I see the average years of experience for contestants on this project" do
+    visit "/projects/#{@project_1.id}"
+    expect(page).to have_content("Project Name: #{@project_1.name}")
+    expect(page).to have_content("Material: #{@project_1.material}")
+    expect(page).to have_content("Challenge Theme: #{@challenge_1.theme}")
+    expect(page).to have_content("Number of Contestants: 3")
+    expect(page).to have_content("Average Contestant Experience: 12 years")
+  end
+  
 end
