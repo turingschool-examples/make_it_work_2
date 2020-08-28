@@ -19,9 +19,11 @@ RSpec.describe "project show page", type: :feature do
     ContestantProject.create(contestant_id: jay.id, project_id: news_chic.id)
 
     visit "/projects/#{news_chic.id}"
+  
     expect(page).to have_content("Project Name: News Chic")
     expect(page).to have_content("Project Material: Newspaper")
     expect(page).to have_content("Project Theme: Recycled Material")
+    expect(page).to have_content("Number of Contestants: 1")
 
 
 
