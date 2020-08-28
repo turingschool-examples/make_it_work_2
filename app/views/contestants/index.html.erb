@@ -1,5 +1,7 @@
-<% binding.pry %>
-<% @contestants.project.each do |project|%>
-<%= contestant.name %>
-<%= contestant.project %>
+<% @contestants.each do |contestant| %>
+<h2><%= contestant.name %></h2>
+<p> Projects:</p>
+<%  contestant.projects.each do |project| %>
+   <%= project.name %>
+<% end %>
 <% end %>

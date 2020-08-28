@@ -26,17 +26,11 @@ RSpec.describe 'As a visitor' do
       ContestantProject.create(contestant_id: kentaro.id, project_id: boardfit.id)
       ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
 
-      visit "/projects/#{lit_fit.id}"
-    #  save_and_open_page
-
-      expect(page).to have_content("Litit")
-      expect(page).to have_content("Lamp")
-
       visit "/projects/#{news_chic.id}"
       expect(page).to have_content("News Chic")
       expect(page).to have_content("Newspaper")
-
-
+      expect(page).to have_content("Recycled Material")
+      
 
     end
   end
