@@ -1,0 +1,8 @@
+<h2>Contestants</h2>
+
+<% @contestants.each do |contestant| %>
+  <ul>
+    <li> <%= contestant.name %> </li>
+    <li> Projects: <%= contestant.projects.map {|project| project.name}.join(", ") %>  </li>
+  </ul>
+<% end %>
