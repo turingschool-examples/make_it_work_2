@@ -78,8 +78,8 @@ I see a count of the number of contestants on this project
   Number of Contestants: 3 )
 
 
-Extensions
-User Story Extension 1 - Average years of experience for contestants by project
+## Extensions
+### User Story Extension 1 - Average years of experience for contestants by project
 As a visitor,
 When I visit a project's show page
 I see the average years of experience for the contestants that worked on that project
@@ -88,7 +88,8 @@ I see the average years of experience for the contestants that worked on that pr
   Challenge Theme: Apartment Furnishings
   Number of Contestants: 3
   Average Contestant Experience: 10.25 years)
-User Story Extension 2 - Adding a contestant to a project
+
+### User Story Extension 2 - Adding a contestant to a project
 As a visitor,
 When I visit a project's show page
 I see a form to add a contestant to this project
