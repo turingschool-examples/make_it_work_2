@@ -1,22 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'project show page' do
+RSpec.describe 'contestant index page' do
 
-  it "can display a specific project's name, material, and theme that the project belongs to" do
-
-    furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
-
-    lit_fit = furniture_challenge.projects.create(name: "Litfit", material: "Lamp")
-
-    visit "/projects/#{lit_fit.id}"
-
-    expect(page).to have_content("Litfit")
-    expect(page).to have_content("Lamp")
-    expect(page).to have_content("Apartment Furnishings")
-
-  end
-
-  it "can display number of contestants on each project" do
+  it "can list names of all contestants and projects that each contestant has been on" do
 
     recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
     furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
@@ -30,12 +16,12 @@ RSpec.describe 'project show page' do
     ContestantProject.create(contestant_id: jay.id, project_id: news_chic.id)
     ContestantProject.create(contestant_id: gretchen.id, project_id: news_chic.id)
     ContestantProject.create(contestant_id: gretchen.id, project_id: upholstery_tux.id)
+    visit "/contestants"
 
-    visit "/projects/#{news_chic.id}"
+    expect(page).to have_content("Jay McCarroll")
     expect(page).to have_content("News Chic")
-    expect(page).to have_content("Newspaper")
-    expect(page).to have_content("Recycled Material")
-    expect(page).to have_content("Number of Contestants: 2")
+    expect(page).to have_content("Gretchen Jones")
+    expect(page).to have_content("Upholstery Tuxedo")
   end
 
 end

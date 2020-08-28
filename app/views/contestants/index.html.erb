@@ -1,0 +1,16 @@
+<h1>Contestant's Projects</h1>
+<% @projects = "" %>
+<% @contestants.each do |contestant| %>
+  <h3>Contestant Name: <%= contestant.name %></h3>
+  <% contestant.projects.each do |project| %>
+    <% if @projects == "" %>
+      <% @projects += "#{project.name}" %>
+    <% else %>
+      <% if @projects.include?("#{project.name}") %>
+      <% else %>
+        <% @projects += ", #{project.name}" %>
+        <% end %>
+      <% end %>
+  <% end %>
+  <p>Projects: <%= @projects %></p>
+<% end %>
