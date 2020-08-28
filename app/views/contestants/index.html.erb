@@ -1,0 +1,13 @@
+<h1> 2020 Contestants </h1>
+
+<% @contestants.each do |contestant| %>
+
+<ul>
+  <li> <%= contestant.name %> </li>
+  <ul>
+    <% contestant.projects.each do |project| %>
+    <li> Project Name: <%= project.name %> </li>
+    <% end %>
+  </ul>
+</ul>
+<% end  %>
