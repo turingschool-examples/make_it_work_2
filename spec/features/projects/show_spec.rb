@@ -50,6 +50,6 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_content("Average Contestant Experience: 12.5 years")
 
       visit "/projects/#{@boardfit.id}"
-      expect(page).to have_content("Average Contestant Experience: 12.5 years")
+      expect(page).to have_content("Average Contestant Experience: 11.5 years")
     end
 end
