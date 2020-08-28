@@ -4,3 +4,20 @@
 <br>
 <h3>Theme: <%= @project.challenge.theme %></h3>
 <h3>Number of Contestants: <%= @project.contestants.count %></h3>
+
+<% @sum = @project.contestants.sum do |contestant| %>
+  <% contestant.years_of_experience %>
+<% end %>
+
+<h3>Average Contestant Experience: <%= (@sum.to_f / @project.contestants.count).round(2) %> years</h3>
+<br><br>
+<div class="form">
+
+  <%= form_tag ("/projects/#{@project.id}") do %>
+
+    <label>Contestant id: </label><br>
+    <%= text_field_tag :id %><br><br>
+
+    <%= submit_tag "Add Contestant To Project" %><br><br>
+  <% end %>
+</div>
