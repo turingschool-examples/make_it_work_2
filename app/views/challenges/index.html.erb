@@ -1,0 +1,11 @@
+<a href="/">Home</a> </br></br>
+|| <a href="javascript:history.back()">Go Back</a> ||
+
+<h1>All Challenges</h1>
+
+<%= link_to "New Challenge", '/challenges/new' %>
+
+<% @challenges.each do |challenge| %>
+  <h3><a href="/challenges/<%= challenge.id %>"><%= challenge.theme %></a></h3>
+  <p><%= challenge.project_budget %></p>
+<% end %>

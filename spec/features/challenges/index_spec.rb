@@ -11,8 +11,8 @@ RSpec.describe 'challenges index page', type: :feature do
 
     visit '/challenges'
 
-    expect(page).to have_text(challenge_1.name)
-    expect(page).to have_text(challenge_2.name)
-    expect(page).to have_text(challenge_3.name)
+    expect(page).to have_text(challenge_1.theme)
+    expect(page).to have_text(challenge_2.theme)
+    expect(page).to have_text(challenge_3.theme)
   end
 end
