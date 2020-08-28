@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contestants Index Page</title>
+  </head>
+
+  <body>
+    
+    <% @contestants.each do |contestant| %>
+      <div id=<%= "contestant-#{contestant.id}" %>>
+        <h3> <%= contestant.name %> </h3>
+        <h4>Projects:</h4>
+        <% contestant.projects.each do |project| %>
+          <ul><%= project.name %></ul>
+        <% end %>
+      </div>
+    <% end %>
+
+  </body>
+</html>
