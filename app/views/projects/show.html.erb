@@ -4,3 +4,7 @@
 <p>Material: <%= @project.material %></p>
 <p>Challenge Theme: <%= @project.challenge.theme %></p>
 <p>Number of Contestants: <%= @project.contestants.count %></p>
+<% @sum = @project.contestants.sum do |contestant| %>
+  <% contestant.years_of_experience %>
+<% end %>
+<p>Average Contestant Experience: <%= (@sum.to_f / @project.contestants.count).round(2) %> years</p>
