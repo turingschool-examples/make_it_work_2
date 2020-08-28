@@ -11,7 +11,6 @@ class ProjectsController < ApplicationController
   def create
     challenge = Challenge.find(params[:challenge_id])
     project = challenge.projects.create!({name: "name", material: "material"})
-    redirect_to "/projects/#{project.id}"
   end
 
   def show
