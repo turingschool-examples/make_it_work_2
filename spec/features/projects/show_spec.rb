@@ -31,7 +31,12 @@ RSpec.describe "Projects Show Page", type: :feature do
 
       expect(page).to have_content(@paper_mache.name)
     end
-    it "can see the project material"
+
+    it "can see the project material" do
+      visit "/projects/#{@boardfit.id}"
+
+      expect(page).to have_content(@boardfit.material)  
+    end
     it "can see the theme of the challenge for project"
   end
 end
