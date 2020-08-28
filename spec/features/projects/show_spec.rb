@@ -37,7 +37,6 @@ RSpec.describe 'as a visitor, when I visit the project show page', type: :featur
   it 'can add contestant to the project' do 
     visit "/projects/#{@project.id}"
 
-    # fill_in(:contestant_id, with: @contestant_3.id)
     select("Kentaro Kameyama", from: "contestant_id").select_option
 
     click_button("Add to Project")
