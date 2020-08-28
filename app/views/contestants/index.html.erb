@@ -1,0 +1,6 @@
+<header><h2 class='page-title'>All Contestants</h2></header>
+<section class='cards-container'>
+<% @contestants.each do |contestant| %>
+  <article id="contestant-<%= contestant.id %>" class='contestant card'>
+    <%= "#{contestant.name}" %>
+<% end %>
