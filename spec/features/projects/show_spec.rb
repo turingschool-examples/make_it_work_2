@@ -11,12 +11,23 @@ require "rails_helper"
 
 RSpec.describe "Projects Show Page", type: :feature do
   describe "As a visitor" do
-    it "can visit the projects show page by unique id"
+    before :each do
+      recycled_material_challenge = Challenge.create!(theme: "Recycled Material", project_budget: 1000)
+      furniture_challenge = Challenge.create!(theme: "Apartment Furnishings", project_budget: 1000)
+
+      @news_chic = recycled_material_challenge.projects.create!(name: "News Chic", material: "Newspaper")
+      @boardfit = recycled_material_challenge.projects.create!(name: "Boardfit", material: "Cardboard Boxes")
+      @paper_mache = furniture_challenge.projects.create!(name: "Paper Mache", material: "Paper")
+    end
+
+    it "can visit the projects show page by unique id" do
+      visit "/projects/#{@news_chic.id}"
+      visit "/projects/#{@boardfit.id}"
+      visit "/projects/#{@paper_mache.id}"
+    end
+
     it "can see the project name"
     it "can see the project material"
     it "can see the theme of the challenge for project"
-    #it "can" do
-    #end
-
   end
 end
