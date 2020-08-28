@@ -10,7 +10,10 @@ class ProjectsController < ApplicationController
     end
 
     @contestants_count = @contestant_projects.count
-    @average_experience = @contestants.sum / @contestants.size
+    
+    if @contestants_count != 0
+      @average_experience = @contestants.sum / @contestants.size
+    end
   end
 
   def add

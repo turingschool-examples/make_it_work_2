@@ -26,3 +26,4 @@ ContestantProject.create(contestant_id: gretchen.id, project_id: upholstery_tux.
 ContestantProject.create(contestant_id: kentaro.id, project_id: upholstery_tux.id)
 ContestantProject.create(contestant_id: kentaro.id, project_id: boardfit.id)
 ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
+ContestantProject.create(contestant_id: kentaro.id, project_id: lit_fit.id)
