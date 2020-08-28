@@ -1,0 +1,13 @@
+<h1>Make It Work</h1>
+<h2>A Project Runway Website</h2>
+</b>
+</b>
+<h2>CONTESTANTS</h2>
+</b>
+</b>
+<% @contestants.each do |contestant| %>
+<p><b>Contestant Name: <%= contestant.name %></b></p>
+  <% contestant.projects.each do |project| %>
+  <p><%= project.name %></p></b>
+  <% end %>
+<% end %>
