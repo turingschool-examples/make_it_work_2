@@ -15,5 +15,8 @@ RSpec.describe 'As a visitor' do
       news_chic = recycled_material_challenge.projects.create(name: "News Chic", material: "Newspaper")
 
       visit "/projects/#{news_chic.id}"
+
+      expect(page).to have_content(news_chic.name)
+      expect(page).to have_content("Recycled Material")
   end
 end
