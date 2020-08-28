@@ -31,8 +31,14 @@ end
       it "And under each contestants name I see a list of the projects (names) that they've been on" do
         visit "/contestants"
 
-        expect(page).to have_content("#{@jay.name}")
-        expect(page).to have_content("News Chic")
+        within("##{@jay.id}") do
+          expect(page).to have_content("#{@jay.name}")
+          expect(page).to have_content("News Chic")
+        end
+        within("##{@gretchen.id}") do
+          expect(page).to have_content("#{@gretchen.name}")
+          expect(page).to have_content("News Chic")
+        end
 
       end
     end
