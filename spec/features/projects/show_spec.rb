@@ -29,7 +29,7 @@ RSpec.describe "As a visitor can see project's name and material" do
 
       expect(page).to have_content("Project: #{@lit_fit.name}")
       expect(page).to have_content("Material: #{@lit_fit.material}")
-      
+
       expect(page).to_not have_content("Material: #{@boardfit.name}")
     end
 
@@ -43,7 +43,7 @@ RSpec.describe "As a visitor can see project's name and material" do
   describe "As visitor when I visit a project's show page I see a count of the number of contestants in the project" do
     it "Display count of contestants" do
       visit "/projects/#{@upholstery_tux.id}"
-
+      # save_and_open_page
       expect(page).to have_content("Number of Contestants: 2")
     end
   end

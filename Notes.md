@@ -45,12 +45,12 @@ When I visit the contestants index page ("/contestants")
 <!-- <div id= <%= "pet-#{pet.id}" %>> </div> -->
 
 ### User Story 3 of 3
-- [] Done
+- [x] Done
 - [x] Set up tests
 
 As a visitor,
 When I visit a project's show page
-  - [] I see a count of the number of contestants on this project
+  - [x] I see a count of the number of contestants on this project
 (e.g.    Litfit
     Material: Lamp Shade
   Challenge Theme: Apartment Furnishings
