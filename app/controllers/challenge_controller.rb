@@ -1,4 +1,4 @@
-class ChallengeController < ActionController::Base
+class ChallengeController < ApplicationController 
   def index
     @projects = Project.all
   end

@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   #projects
   get '/projects', to: 'projects#index'
   get '/projects/:id', to: 'projects#show'
+
+  #contestants
+  get '/contestants', to: 'contestant#index'
 end
