@@ -76,5 +76,19 @@ RSpec.describe "Projects Show Page", type: :feature do
       expect(page).to have_content("Number of Contestants: 4")
       expect(page).to have_content("Average Contestant Experience: 12.0 years")
     end
+
+    it "can see a form on the page to add a contestant"
+    it "can fill our the add contestant form"
+    it "can click on 'Add Contestant To Project' button and return to show page with contestant count"
+    it "can see updates to contestant index with NEW PROJECT"
   end
 end
+
+# When I visit a project's show page
+# I see a form to add a contestant to this project
+# When I fill out a field with an existing contestants id
+# And hit "Add Contestant To Project"
+# I'm taken back to the project's show page
+# And I see that the number of contestants has increased by 1
+# And when I visit the contestants index page
+# I see that project listed under that contestant's name
