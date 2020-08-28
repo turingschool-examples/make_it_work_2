@@ -3,4 +3,12 @@
   <p class="project-material">Material: <%= @project.material %></p>
   <p class="project-theme">Challenge Theme: <%= @project.challenge.theme %></p>
   <p class="project-num-contestants">Number of Contestants: <%= @project.contestants.count %></p>
+  <p class="project-avg-contestant-exp">Average Contestant Experience: <%= @project.contestants.sum(:years_of_experience)/@project.contestants.count %></p>
 </section>
+
+<%= form_tag "/contestant_projects/#{@project.id}/create", class: 'add_contestant_to_project_form' do %>
+  <%= label_tag 'Contestant ID' %>
+  <%= text_field_tag 'Contestant ID' %>
+
+  <%= submit_tag 'Add Contestant To Project' %>
+<% end %>
