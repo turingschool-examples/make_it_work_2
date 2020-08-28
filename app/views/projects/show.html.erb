@@ -1,6 +1,6 @@
 <h1><%= @project.name %></h1>
-<h3><%= @project.material %></h3>
-<h3><%= @project.challenge.theme %></h3>
+<h3>Material: <%= @project.material %></h3>
+<h3>Challenge Theme: <%= @project.challenge.theme %></h3>
 <h3>Number of Contestants: <%= @project.contestants.count %></h3>
 <% if @project.contestants.count > 0 %>
 <h3>Average Contestant Experience: <%= @project.contestants.sum {|contestant| contestant.years_of_experience} / @project.contestants.count %> years</h3>
