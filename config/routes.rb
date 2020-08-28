@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :projects
 
   resources :contestants
+  #get '/contestants', to: 'contestants#index'
 
 
 end
