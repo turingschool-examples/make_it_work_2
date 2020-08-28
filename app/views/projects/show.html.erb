@@ -6,3 +6,23 @@
 <p>Number of Contestants: <%= @project.contestants.count %> </p>
 <p>Average Contestant Experience: <%= @project.contestants.average(:years_of_experience).round %> years </p>
 <hr>
+<h2>Add a contestant to this project:</h2>
+<section class="add_contestant_form"
+<%= form_tag "/projects/#{@project.id}", method: :post do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name%>
+  <br>
+  <%= label_tag :age %>
+  <%= text_field_tag :age %>
+  <br>
+  <%= label_tag :hometown %>
+  <%= text_field_tag :hometown %>
+  <br>
+  <%= label_tag :years_of_experience %>
+  <%= text_field_tag :years_of_experience %>
+  <br>
+  <br>
+  <%= submit_tag 'Add Contestant To Project' %>
+<% end %>
+</section>
+<hr>
