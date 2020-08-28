@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def add
+  def create
   end
 
   def update_contestants
