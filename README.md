@@ -1,6 +1,6 @@
 # Make It Work
 
-Fork this repository and clone your newly created repository. At the end of 2 hours, push your code to your repository and create a pull request to this repository.
+Fork this repository and clone your newly created repository. At the end of the challenge, push your code to your repository and create a pull request to this repository.
 
 ## Be sure to read all user stories BEFORE beginning your work
 ---
