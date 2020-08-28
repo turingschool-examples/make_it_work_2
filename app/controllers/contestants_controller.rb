@@ -1,5 +1,5 @@
 class ContestantsController < ApplicationController
   def index
-    # Contestant.all
+    @contestants = Contestant.all
   end
 end
