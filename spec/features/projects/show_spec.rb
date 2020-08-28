@@ -46,14 +46,18 @@ RSpec.describe "As a visitor can see project's name and material" do
       visit "/projects/#{@upholstery_tux.id}"
       # save_and_open_page
       expect(page).to have_content("Number of Contestants: 2")
+      
+      visit "/projects/#{@news_chic.id}"
+      expect(page).to have_content("Number of Contestants: 3")
     end
   end
   
   describe "I see the average years of experience for the contestants that worked on that project" do
     it "Displays average years of experience" do
       visit "/projects/#{@news_chic.id}"
-
-      expect(page).to have_content("Contestants' Average Experience: 13.3 years")
+      # binding.pry
+      # save_and_open_page
+      expect(page).to have_content("Contestants' Average Experience: 13.3333333333333333 years")
     end
   end
 

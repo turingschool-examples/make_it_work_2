@@ -61,18 +61,24 @@ When I visit a project's show page
 ### Extensions
 
 #### User Story Extension 1 - Average years of experience for contestants by project
-- [] Done
-- [] Set up tests
+- [x] Done
+- [x] Set up tests
 
 As a visitor,
 When I visit a project's show page
-  - [] I see the average years of experience for the contestants that worked on that project
+  - [x] I see the average years of experience for the contestants that worked on that project
 (e.g.    Litfit
     Material: Lamp Shade
   Challenge Theme: Apartment Furnishings
   Number of Contestants: 3
   Average Contestant Experience: 10.25 years)
 
+Using @news_chic 
+Erin: 15
+Jay: 13
+Gretchen: 12
+total: 40
+average: 40/3 = 13.3
 
 #### User Story Extension 2 - Adding a contestant to a project
 - [] Done
