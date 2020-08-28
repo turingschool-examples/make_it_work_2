@@ -12,6 +12,7 @@
     <p> Material: <%= @project.material %> </p>
     <p> Challenge Theme: <%= @project.challenge.theme %> </p>
     <p> Number of Contestants: <%=  @project.contestants.count %> </p>
+    <p> Contestants' Average Experience: <%=  @project.contestants.average(:years_of_experience) %> years</p>
 
   </body>
 
