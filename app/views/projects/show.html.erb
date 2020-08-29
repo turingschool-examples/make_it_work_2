@@ -5,4 +5,10 @@
 <h3>Theme: <%= @project.challenge.theme %></h3>
 <h3>Number of Contestants: <%= @project.contestants.count %></h3>
 
+<% @project.contestants.sum do |contestant| %>
+  <% @sum = contestant.years_of_experience %>
+<% end %>
+
+<h3>Average years of experience: <%= (@sum.to_f / @project.contestants.count).round(2) %></h3>
+
 <%= link_to 'Add Contestant to Project', "/projects/#{@project.id}/add" %>

@@ -22,6 +22,8 @@ RSpec.describe 'project show page' do
     expect(page).to have_content('Recycled Material')
   end
 
+  #expect(page).to have_content("Number of Contestants: #{news_chic.contestant_count}")
+
   it 'can display number of contestants on a project' do
     recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
     furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
@@ -66,7 +68,7 @@ RSpec.describe 'project show page' do
     expect(page).to have_content('0')
   end
 
-  it 'can add a contestant to a project' do
+  it 'can return average years of experience' do
     recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
     furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
     news_chic = recycled_material_challenge.projects.create(name: "News Chic", material: "Newspaper")
@@ -84,5 +86,9 @@ RSpec.describe 'project show page' do
     ContestantProject.create(contestant_id: kentaro.id, project_id: boardfit.id)
     ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
 
+    visit "/projects/#{news_chic.id}"
+
+    expect(page).to have_content("Average years of experience")
+    expect(page).to have_content(6.0)
   end
 end
